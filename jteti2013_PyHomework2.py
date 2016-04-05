@@ -85,6 +85,15 @@ numList = ['Max','Min','Totals','Percent']
 show_agg_stats = pd.DataFrame(0, index=npShows, columns= numList )
 
 
+# 14. Populate show_raw_stats with data from the Original Array injested from show_results.txt.
+i = 0
+j = 0
+while i < len(arr):
+
+
+
+
+
 
 
 
