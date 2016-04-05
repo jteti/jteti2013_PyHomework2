@@ -54,3 +54,12 @@ npViewers = np.array(viewers)
 print(npStates, '\n')
 print(npShows, '\n')
 print(npViewers, '\n')
+
+# 9. Sort the States and Shows arrays
+sorted(npStates)
+sorted(npShows)
+
+# 10. Convert the Viewers array from STRINGS into INTS
+npViewers = np.asarray(npViewers, dtype=int)
+
+
