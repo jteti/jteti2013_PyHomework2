@@ -73,7 +73,21 @@ print(npViewers, '\n')
 print(sumViewers, '\n')
 
 # 13. Create 2 DataFrames:
+import pandas as pd
+
 #(a)show_raw_stats: index = numpy sorted array of SHOWS;
 #columns = numpy sorted array of STATES
+show_raw_stats = pd.DataFrame(0, index=npShows, columns=npStates)
+
+#(b)show_agg_stats: index = same as above;
+# columns= a list with the words Max, Min, Totals and Percent in it
+numList = ['Max','Min','Totals','Percent']
+show_agg_stats = pd.DataFrame(0, index=npShows, columns= numList )
+
+
+
+
+
+
 
 
