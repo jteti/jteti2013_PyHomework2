@@ -56,8 +56,8 @@ print(npShows, '\n')
 print(npViewers, '\n')
 
 # 9. Sort the States and Shows arrays
-sorted(npStates)
-sorted(npShows)
+npStates = sorted(npStates)
+npShows = sorted(npShows)
 
 # 10. Convert the Viewers array from STRINGS into INTS
 npViewers = np.asarray(npViewers, dtype=int)
@@ -68,8 +68,12 @@ sumViewers = sum(npViewers)
 # 12. Print: Sorted arrays (states and shows), viewers list (as ints),
 # and the variable that is the sum of the viewers list.
 print(npStates, '\n')
-print(npStates, '\n')
+print(npShows, '\n')
 print(npViewers, '\n')
 print(sumViewers, '\n')
+
+# 13. Create 2 DataFrames:
+#(a)show_raw_stats: index = numpy sorted array of SHOWS;
+#columns = numpy sorted array of STATES
 
 
