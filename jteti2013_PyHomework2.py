@@ -7,5 +7,9 @@ shows = []
 viewers = []
 
 # 3. Injest data from text file and put it into a NumPy array (show_results.txt)
+import numpy as np
+arr = np.genfromtxt('show_results.txt', dtype='str', delimiter=',')
 
+# 4. Print the raw data
+print(arr)
 
