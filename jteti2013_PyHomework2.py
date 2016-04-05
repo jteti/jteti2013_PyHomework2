@@ -11,7 +11,7 @@ import numpy as np
 arr = np.genfromtxt('show_results.txt', dtype='str', delimiter=',')
 
 # 4. Print the raw data
-print(arr, '\n')
+print('Raw data: ', arr, '\n')
 
 # 5. Take the data from the NumPy array and sort it by state, show and
 # viewers, putting each into the appropriate lists you defined earlier.
@@ -41,9 +41,9 @@ while v < len(arr):
     v += 1
 
 # 6. Print these unsorted lists
-print(states, '\n')
-print(shows, '\n')
-print(viewers, '\n')
+print('Unsorted array of states: ', states, '\n')
+print('Unsorted array of shows: ', shows, '\n')
+print('Unsorted array of viewers: ', viewers, '\n')
 
 # 7. Convert all 3 lists into NumPy arrays
 npStates = np.array(states)
@@ -51,9 +51,9 @@ npShows = np.array(shows)
 npViewers = np.array(viewers)
 
 # 8. print new NumPy Arrays
-print(npStates, '\n')
-print(npShows, '\n')
-print(npViewers, '\n')
+print('NumPy array of states: ', npStates, '\n')
+print('NumPy array of shows: ', npShows, '\n')
+print('NumPy array of viewers: ', npViewers, '\n')
 
 # 9. Sort the States and Shows arrays
 npStates = sorted(npStates)
@@ -67,10 +67,10 @@ sumViewers = sum(npViewers)
 
 # 12. Print: Sorted arrays (states and shows), viewers list (as ints),
 # and the variable that is the sum of the viewers list.
-print(npStates, '\n')
-print(npShows, '\n')
-print(npViewers, '\n')
-print(sumViewers, '\n')
+print('Sorted array of states: ', npStates, '\n')
+print('Sorted array of shows: ',npShows, '\n')
+print('Viewer list as ints: ', npViewers, '\n')
+print('Sum of viewer list: ', sumViewers, '\n')
 
 # 13. Create 2 DataFrames:
 import pandas as pd
