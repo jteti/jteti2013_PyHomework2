@@ -11,7 +11,7 @@ import numpy as np
 arr = np.genfromtxt('show_results.txt', dtype='str', delimiter=',')
 
 # 4. Print the raw data
-print(arr)
+print(arr, '\n')
 
 # 5. Take the data from the NumPy array and sort it by state, show and
 # viewers, putting each into the appropriate lists you defined earlier.
@@ -40,4 +40,8 @@ while v < len(arr):
     viewers.append(arr[v][2])
     v += 1
 
+# 6. Print these unsorted lists
+print(states, '\n')
+print(shows, '\n')
+print(viewers, '\n')
 
