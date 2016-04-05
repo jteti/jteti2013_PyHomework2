@@ -45,3 +45,12 @@ print(states, '\n')
 print(shows, '\n')
 print(viewers, '\n')
 
+# 7. Convert all 3 lists into NumPy arrays
+npStates = np.array(states)
+npShows = np.array(shows)
+npViewers = np.array(viewers)
+
+# 8. print new NumPy Arrays
+print(npStates, '\n')
+print(npShows, '\n')
+print(npViewers, '\n')
