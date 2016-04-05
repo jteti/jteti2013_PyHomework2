@@ -62,4 +62,14 @@ sorted(npShows)
 # 10. Convert the Viewers array from STRINGS into INTS
 npViewers = np.asarray(npViewers, dtype=int)
 
+# 11. Sum up viewers list into one variable (you can do this in one line)
+sumViewers = sum(npViewers)
+
+# 12. Print: Sorted arrays (states and shows), viewers list (as ints),
+# and the variable that is the sum of the viewers list.
+print(npStates, '\n')
+print(npStates, '\n')
+print(npViewers, '\n')
+print(sumViewers, '\n')
+
 
