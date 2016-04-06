@@ -95,8 +95,15 @@ print(show_raw_stats, '\n')
 print(show_agg_stats, '\n')
 
 # 17. Print the answer to these questions:
+
 # a.Which Show has the highest percentage?
-print('The show with the highest percentage of viewers is ', npShows[2], '\n')
+print('The show with the highest percentage of viewers is', npShows[2], '\n')
+
+# b.Which Show has the lowest percentage?
+print('The show with the lowest percentage of viewers is', npShows[5], '\n')
+
+# c. Which show is your favorite?
+print('While I do enjoy The Flash, of all the shows listed, my favorite is', npShows[1], '\n')
 
 
 
