@@ -88,7 +88,8 @@ show_agg_stats = pd.DataFrame(0, index=npShows, columns= numList )
 # 14. Populate show_raw_stats with data from the Original Array injested from show_results.txt.
 
 
-# 15.
+# 15. Populate the Max, Min, Totals, and Percent in show_agg_stats
+# using the DataFrame native functionality
 
 # 16. Print both dataframe
 print(show_raw_stats, '\n')
@@ -103,7 +104,7 @@ print('The show with the highest percentage of viewers is', npShows[2], '\n')
 print('The show with the lowest percentage of viewers is', npShows[5], '\n')
 
 # c. Which show is your favorite?
-print('While I do enjoy The Flash, of all the shows listed, my favorite is', npShows[1], '\n')
+print('While I do enjoy', npShows[7], ', of all the shows listed, my favorite is', npShows[1], '\n')
 
 
 
