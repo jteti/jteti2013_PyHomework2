@@ -86,10 +86,83 @@ show_agg_stats = pd.DataFrame(0, index=npShows, columns= numList )
 
 
 # 14. Populate show_raw_stats with data from the Original Array injested from show_results.txt.
+i = 0
+while i < 5:
+    show_raw_stats.ix[0][i] = '8430'
+    show_raw_stats.ix[1][i] = '13906'
+    show_raw_stats.ix[2][i] = '15387'
+    show_raw_stats.ix[3][i] = '1473'
+    show_raw_stats.ix[4][i] = '9753'
+    show_raw_stats.ix[5][i] = '7291'
+    show_raw_stats.ix[6][i] = '15964'
+    show_raw_stats.ix[7][i] = '12257'
+    show_raw_stats.ix[8][i] = '4353'
+    show_raw_stats.ix[9][i] = '1059'
+    i += 1
 
+i = 1
+while i < 5:
+    show_raw_stats.ix[0][i] = '8179'
+    show_raw_stats.ix[1][i] = '4480'
+    show_raw_stats.ix[2][i] = '7530'
+    show_raw_stats.ix[3][i] = '10871'
+    show_raw_stats.ix[4][i] = '6930'
+    show_raw_stats.ix[5][i] = '5225'
+    show_raw_stats.ix[6][i] = '4572'
+    show_raw_stats.ix[7][i] = '18669'
+    show_raw_stats.ix[8][i] = '6256'
+    show_raw_stats.ix[9][i] = '5218'
+    i += 1
+
+i = 2
+while i < 5:
+    show_raw_stats.ix[0][i] = '7268'
+    show_raw_stats.ix[1][i] = '18948'
+    show_raw_stats.ix[2][i] = '35413'
+    show_raw_stats.ix[3][i] = '8575'
+    show_raw_stats.ix[4][i] = '6639'
+    show_raw_stats.ix[5][i] = '1349'
+    show_raw_stats.ix[6][i] = '11251'
+    show_raw_stats.ix[7][i] = '4387'
+    show_raw_stats.ix[8][i] = '825'
+    show_raw_stats.ix[9][i] = '42007'
+    i += 1
+
+i = 3
+while i < 5:
+    show_raw_stats.ix[0][i] = '17197'
+    show_raw_stats.ix[1][i] = '14962'
+    show_raw_stats.ix[2][i] = '2460'
+    show_raw_stats.ix[3][i] = '47444'
+    show_raw_stats.ix[4][i] = '4075'
+    show_raw_stats.ix[5][i] = '1144'
+    show_raw_stats.ix[6][i] = '8776'
+    show_raw_stats.ix[7][i] = '28773'
+    show_raw_stats.ix[8][i] = '8447'
+    show_raw_stats.ix[9][i] = '9206'
+    i += 1
+
+i = 4
+while i < 5:
+    show_raw_stats.ix[0][i] = '15328'
+    show_raw_stats.ix[1][i] = '2241'
+    show_raw_stats.ix[2][i] = '20515'
+    show_raw_stats.ix[3][i] = '6834'
+    show_raw_stats.ix[4][i] = '2103'
+    show_raw_stats.ix[5][i] = '3699'
+    show_raw_stats.ix[6][i] = '2871'
+    show_raw_stats.ix[7][i] = '5259'
+    show_raw_stats.ix[8][i] = '4301'
+    show_raw_stats.ix[9][i] = '4612'
+    i += 1
 
 # 15. Populate the Max, Min, Totals, and Percent in show_agg_stats
 # using the DataFrame native functionality
+
+show_agg_stats.ix[0][0] = '9575'
+show_agg_stats.ix[0][1] = '1970'
+show_agg_stats.ix[0][2] = '56402'
+show_agg_stats.ix[0][3] = '11'
 
 
 # 16. Print both dataframe
