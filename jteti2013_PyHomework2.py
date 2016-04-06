@@ -91,12 +91,12 @@ show_agg_stats = pd.DataFrame(0, index=npShows, columns= numList )
 # 15. Populate the Max, Min, Totals, and Percent in show_agg_stats
 # using the DataFrame native functionality
 
+
 # 16. Print both dataframe
 print(show_raw_stats, '\n')
 print(show_agg_stats, '\n')
 
 # 17. Print the answer to these questions:
-
 # a.Which Show has the highest percentage?
 print('The show with the highest percentage of viewers is', npShows[2], '\n')
 
