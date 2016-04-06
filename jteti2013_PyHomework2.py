@@ -96,7 +96,7 @@ print(show_agg_stats, '\n')
 
 # 17. Print the answer to these questions:
 # a.Which Show has the highest percentage?
-print('The show with the highest percentage of viewers is ', npShows[5], '\n')
+print('The show with the highest percentage of viewers is ', npShows[2], '\n')
 
 
 
