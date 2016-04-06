@@ -86,17 +86,17 @@ show_agg_stats = pd.DataFrame(0, index=npShows, columns= numList )
 
 
 # 14. Populate show_raw_stats with data from the Original Array injested from show_results.txt.
-i = 0
-j = 0
-while i < len(arr):
 
 
+# 15.
 
+# 16. Print both dataframe
+print(show_raw_stats, '\n')
+print(show_agg_stats, '\n')
 
-
-
-
-
+# 17. Print the answer to these questions:
+# a.Which Show has the highest percentage?
+print('The show with the highest percentage of viewers is ', npShows[5], '\n')
 
 
 
