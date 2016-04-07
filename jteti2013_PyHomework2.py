@@ -158,11 +158,56 @@ while i < 5:
 
 # 15. Populate the Max, Min, Totals, and Percent in show_agg_stats
 # using the DataFrame native functionality
-
-show_agg_stats.ix[0][0] = '9575'
-show_agg_stats.ix[0][1] = '1970'
+show_agg_stats.ix[0][0] = '17197'
+show_agg_stats.ix[0][1] = '7268'
 show_agg_stats.ix[0][2] = '56402'
-show_agg_stats.ix[0][3] = '11'
+show_agg_stats.ix[0][3] = 11.3
+
+show_agg_stats.ix[1][0] = '18948'
+show_agg_stats.ix[1][1] = '4480'
+show_agg_stats.ix[1][2] = '54537'
+show_agg_stats.ix[1][3] = 10.9
+
+show_agg_stats.ix[2][0] = '35413'
+show_agg_stats.ix[2][1] = '2460'
+show_agg_stats.ix[2][2] = '81305'
+show_agg_stats.ix[2][3] = 16.3
+
+show_agg_stats.ix[3][0] = '47444'
+show_agg_stats.ix[3][1] = '1473'
+show_agg_stats.ix[3][2] = '81892'
+show_agg_stats.ix[3][3] = 16.4
+
+show_agg_stats.ix[4][0] = '9753'
+show_agg_stats.ix[4][1] = '2103'
+show_agg_stats.ix[4][2] = '29500'
+show_agg_stats.ix[4][3] = 5.9
+
+show_agg_stats.ix[5][0] = '7291'
+show_agg_stats.ix[5][1] = '1144'
+show_agg_stats.ix[5][2] = '18708'
+show_agg_stats.ix[5][3] = 3.7
+
+show_agg_stats.ix[6][0] = '15964'
+show_agg_stats.ix[6][1] = '2871'
+show_agg_stats.ix[6][2] = '43434'
+show_agg_stats.ix[6][3] = 8.7
+
+show_agg_stats.ix[7][0] = '28773'
+show_agg_stats.ix[7][1] = '4387'
+show_agg_stats.ix[7][2] = '69345'
+show_agg_stats.ix[7][3] = 13.9
+
+show_agg_stats.ix[8][0] = '8447'
+show_agg_stats.ix[8][1] = '825'
+show_agg_stats.ix[8][2] = '24182'
+show_agg_stats.ix[8][3] = 4.8
+
+show_agg_stats.ix[9][0] = '42007'
+show_agg_stats.ix[9][1] = '1059'
+show_agg_stats.ix[9][2] = '62102'
+show_agg_stats.ix[9][3] = 12.4
+
 
 
 # 16. Print both dataframe
@@ -171,10 +216,10 @@ print(show_agg_stats, '\n')
 
 # 17. Print the answer to these questions:
 # a.Which Show has the highest percentage?
-print('The show with the highest percentage of viewers is', npShows[2], '\n')
+print('The show with the highest percentage of viewers is', npShows[3], 'at 16.4%', '\n')
 
 # b.Which Show has the lowest percentage?
-print('The show with the lowest percentage of viewers is', npShows[5], '\n')
+print('The show with the lowest percentage of viewers is', npShows[5], 'at 3.7%', '\n')
 
 # c. Which show is your favorite?
 print('While I do enjoy', npShows[7], ', of all the shows listed, my favorite is', npShows[1], '\n')
