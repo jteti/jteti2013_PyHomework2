@@ -16,7 +16,7 @@ print('Raw data: ', arr, '\n')
 # 5. Take the data from the NumPy array and sort it by state, show and
 # viewers, putting each into the appropriate lists you defined earlier.
 # (so now you have 3 lists, one with states, one with shows and one
-# with viewer counts.) No duplicates
+# with viewer counts.)  No duplicates.
 
 # populate states list
 st = 0
@@ -86,7 +86,7 @@ show_agg_stats = pd.DataFrame(0, index=npShows, columns= numList )
 
 
 # 14. Populate show_raw_stats with data from the Original Array injested from show_results.txt.
-import bumpy as np
+import numpy as np
 import pandas as pd
 
 # Create lists to hold states, shows and viewers
@@ -147,7 +147,7 @@ for i in range(len(arr)):
     state = arr[i][0]
     show = arr[i][1]
     viewers_num = int(arr[i][2])
-    show_raw_stats.ix[show][state] += viewers_num
+    show_raw_stats.loc[show][state] += viewers_num
 
 print(show_raw_stats)
 
@@ -178,6 +178,3 @@ print('The show with the lowest percentage of viewers is', npShows[5], 'at 3.7%'
 
 # c. Which show is your favorite?
 print('While I do enjoy', npShows[7], ', of all the shows listed, my favorite is', npShows[1], '\n')
-
-
-
