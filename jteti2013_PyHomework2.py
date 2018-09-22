@@ -86,127 +86,82 @@ show_agg_stats = pd.DataFrame(0, index=npShows, columns= numList )
 
 
 # 14. Populate show_raw_stats with data from the Original Array injested from show_results.txt.
-i = 0
-while i < 5:
-    show_raw_stats.ix[0][i] = '8430'
-    show_raw_stats.ix[1][i] = '13906'
-    show_raw_stats.ix[2][i] = '15387'
-    show_raw_stats.ix[3][i] = '1473'
-    show_raw_stats.ix[4][i] = '9753'
-    show_raw_stats.ix[5][i] = '7291'
-    show_raw_stats.ix[6][i] = '15964'
-    show_raw_stats.ix[7][i] = '12257'
-    show_raw_stats.ix[8][i] = '4353'
-    show_raw_stats.ix[9][i] = '1059'
-    i += 1
+import bumpy as np
+import pandas as pd
 
-i = 1
-while i < 5:
-    show_raw_stats.ix[0][i] = '8179'
-    show_raw_stats.ix[1][i] = '4480'
-    show_raw_stats.ix[2][i] = '7530'
-    show_raw_stats.ix[3][i] = '10871'
-    show_raw_stats.ix[4][i] = '6930'
-    show_raw_stats.ix[5][i] = '5225'
-    show_raw_stats.ix[6][i] = '4572'
-    show_raw_stats.ix[7][i] = '18669'
-    show_raw_stats.ix[8][i] = '6256'
-    show_raw_stats.ix[9][i] = '5218'
-    i += 1
+# Create lists to hold states, shows and viewers
+states = []
+shows = []
+viewers = []
 
-i = 2
-while i < 5:
-    show_raw_stats.ix[0][i] = '7268'
-    show_raw_stats.ix[1][i] = '18948'
-    show_raw_stats.ix[2][i] = '35413'
-    show_raw_stats.ix[3][i] = '8575'
-    show_raw_stats.ix[4][i] = '6639'
-    show_raw_stats.ix[5][i] = '1349'
-    show_raw_stats.ix[6][i] = '11251'
-    show_raw_stats.ix[7][i] = '4387'
-    show_raw_stats.ix[8][i] = '825'
-    show_raw_stats.ix[9][i] = '42007'
-    i += 1
+# Inject data from text file and print
+arr = np.genfromtxt('show_results.txt', dtype='str', delimiter=',')
+print(arr)
 
-i = 3
-while i < 5:
-    show_raw_stats.ix[0][i] = '17197'
-    show_raw_stats.ix[1][i] = '14962'
-    show_raw_stats.ix[2][i] = '2460'
-    show_raw_stats.ix[3][i] = '47444'
-    show_raw_stats.ix[4][i] = '4075'
-    show_raw_stats.ix[5][i] = '1144'
-    show_raw_stats.ix[6][i] = '8776'
-    show_raw_stats.ix[7][i] = '28773'
-    show_raw_stats.ix[8][i] = '8447'
-    show_raw_stats.ix[9][i] = '9206'
-    i += 1
+# Loop through the new numpy array and put into aforementioned lists
+for i in range(1, len(arr)):
+    if not arr[i][0] in states:
+        states.append(arr[i][0])
+    if not arr[i][1] in shows:
+        shows.append(arr[i][1])
+    viewers.append(arr[i][2])
 
-i = 4
-while i < 5:
-    show_raw_stats.ix[0][i] = '15328'
-    show_raw_stats.ix[1][i] = '2241'
-    show_raw_stats.ix[2][i] = '20515'
-    show_raw_stats.ix[3][i] = '6834'
-    show_raw_stats.ix[4][i] = '2103'
-    show_raw_stats.ix[5][i] = '3699'
-    show_raw_stats.ix[6][i] = '2871'
-    show_raw_stats.ix[7][i] = '5259'
-    show_raw_stats.ix[8][i] = '4301'
-    show_raw_stats.ix[9][i] = '4612'
-    i += 1
+print("Unsorted lists")
+print(states)
+print(shows)
+print(viewers)
+
+# Convert new lists into numpy arrays
+np_states = np.asarray(states)
+np_shows = np.asarray(shows)
+np_viewers = np.asarray(viewers)
+
+print("Unsorted numpy arrays")
+print(np_states)
+print(np_shows)
+print(np_viewers)
+
+# Sort numpy arrays and convert viewers array into ints.
+# Also sum up vieweres array
+# Print everything
+sort_np_states = sorted(np_states)
+sort_np_shows = sorted(np_shows)
+
+np_int_viewers = np_viewers.astype(int)
+sum_viewers = sum(np_int_viewers)
+
+print("Sorted Numpy Arrays & Int type viewers")
+print(sort_np_states)
+print(sort_np_shows)
+print(np_int_viewers)
+
+print("Sum of Viewers")
+print(sum_viewers)
+
+# Create two DataFrames
+show_raw_stats = pd.DataFrame(0, index=sort_np_shows, columns=sort_np_states)
+show_agg_stats = pd.DataFrame(0, index=sort_np_shows, columns=['Max', 'Min', 'Totals','Percent'])
+
+# Populate the DataFrames and sum the values in place
+for i in range(len(arr)):
+    state = arr[i][0]
+    show = arr[i][1]
+    viewers_num = int(arr[i][2])
+    show_raw_stats.ix[show][state] += viewers_num
+
+print(show_raw_stats)
 
 # 15. Populate the Max, Min, Totals, and Percent in show_agg_stats
 # using the DataFrame native functionality
-show_agg_stats.ix[0][0] = '17197'
-show_agg_stats.ix[0][1] = '7268'
-show_agg_stats.ix[0][2] = '56402'
-show_agg_stats.ix[0][3] = 11.3
 
-show_agg_stats.ix[1][0] = '18948'
-show_agg_stats.ix[1][1] = '4480'
-show_agg_stats.ix[1][2] = '54537'
-show_agg_stats.ix[1][3] = 10.9
+# Calculate the max, min, sum and percentages of the data and put into the new DataFrame
 
-show_agg_stats.ix[2][0] = '35413'
-show_agg_stats.ix[2][1] = '2460'
-show_agg_stats.ix[2][2] = '81305'
-show_agg_stats.ix[2][3] = 16.3
+show_agg_stats['Max'] = show_raw_stats.max(axis=1)
+show_agg_stats['Min'] = show_raw_stats.min(axis=1)
+show_agg_stats['Totals'] = show_raw_stats.sum(axis=1)
+show_agg_stats['Percent'] = show_agg_stats['Totals'] / sum_viewers * 100
+print(show_agg_stats)
 
-show_agg_stats.ix[3][0] = '47444'
-show_agg_stats.ix[3][1] = '1473'
-show_agg_stats.ix[3][2] = '81892'
-show_agg_stats.ix[3][3] = 16.4
-
-show_agg_stats.ix[4][0] = '9753'
-show_agg_stats.ix[4][1] = '2103'
-show_agg_stats.ix[4][2] = '29500'
-show_agg_stats.ix[4][3] = 5.9
-
-show_agg_stats.ix[5][0] = '7291'
-show_agg_stats.ix[5][1] = '1144'
-show_agg_stats.ix[5][2] = '18708'
-show_agg_stats.ix[5][3] = 3.7
-
-show_agg_stats.ix[6][0] = '15964'
-show_agg_stats.ix[6][1] = '2871'
-show_agg_stats.ix[6][2] = '43434'
-show_agg_stats.ix[6][3] = 8.7
-
-show_agg_stats.ix[7][0] = '28773'
-show_agg_stats.ix[7][1] = '4387'
-show_agg_stats.ix[7][2] = '69345'
-show_agg_stats.ix[7][3] = 13.9
-
-show_agg_stats.ix[8][0] = '8447'
-show_agg_stats.ix[8][1] = '825'
-show_agg_stats.ix[8][2] = '24182'
-show_agg_stats.ix[8][3] = 4.8
-
-show_agg_stats.ix[9][0] = '42007'
-show_agg_stats.ix[9][1] = '1059'
-show_agg_stats.ix[9][2] = '62102'
-show_agg_stats.ix[9][3] = 12.4
 
 
 
